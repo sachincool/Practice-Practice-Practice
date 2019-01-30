@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<item android:id="@+id/action_bar_toast" android:icon="@drawable/ic_add_white_24dp" app:showAsAction="ifRoom" android:title="show Toast"
-    />
+<item android:id="@+id/action_bar_toast" android:icon="@drawable/ic_add_white_24dp" app:showAsAction="ifRoom" android:title="show Toast"/>
+    <item android:id="@+id/action_cart" android:title="Action cart" android:icon="@drawable/ic_shopping_cart_black_24dp" app:showAsAction="ifRoom"/>
 
+<item app:showAsAction="ifRoom" android:icon="@drawable/ic_airport_shuttle_black_24dp" android:title="Shipping" android:id="@+id/shipping"/>
+<item android:id="@+id/customer" android:title="customer" android:icon="@drawable/ic_account_circle_black_24dp" app:showAsAction="ifRoom" />
 </menu>

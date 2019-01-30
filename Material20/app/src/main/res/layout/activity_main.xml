@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -17,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:text="Hello"
             app:cornerRadius="10dp"
             app:icon="@drawable/ic_android_white_24dp"
@@ -30,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
-            android:text="ASDASDASDASDASDASDASDA"
+            android:text="Boom Shakalaka!!"
             app:closeIcon="@drawable/ic_add_circle_outline_black_24dp"
             app:closeIconEnabled="true"/>
 <android.support.design.chip.ChipGroup
@@ -74,9 +75,9 @@
 <android.support.design.widget.FloatingActionButton
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-
-    app:fabSize="normal"
-    android:src="@drawable/ic_add_white_24dp"
+android:backgroundTint="#004D40"
+    app:fabSize="mini"
+    android:src="@drawable/ic_donut_large_black_24dp"
     app:layout_anchor="@id/bottom_app_bar"
     />
     <android.support.design.bottomappbar.BottomAppBar
@@ -84,8 +85,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:backgroundTint="@color/colorPrimary"
-
-        app:fabAlignmentMode="end"
+        android:backgroundTint="@color/colorPrimaryDark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:fabAlignmentMode="center"
         />
 </android.support.design.widget.CoordinatorLayout>
