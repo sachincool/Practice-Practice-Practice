@@ -2,7 +2,6 @@ package com.crappy.architectureexample
 
 import android.app.Application
 import android.os.AsyncTask
-import android.os.Handler
 import androidx.lifecycle.LiveData
 
 /**
@@ -10,7 +9,7 @@ import androidx.lifecycle.LiveData
  */
 class NoteRepository(application: Application) {
 private val noteDao:NoteDao
-    private val Notes:LiveData<List<Note>>
+    private var Notes:LiveData<List<Note>>
 
     init{
         val database =NoteDatabase.getInstance(application)
@@ -43,7 +42,6 @@ private val noteDao:NoteDao
     }
     fun getAllNotes():LiveData<List<Note>>
     {
-
         return Notes
     }
 
@@ -53,7 +51,7 @@ private val noteDao:NoteDao
             noteDao.insert(params[0]!!)
         }
     }
-    val handler= Handler()
+
 
 
 

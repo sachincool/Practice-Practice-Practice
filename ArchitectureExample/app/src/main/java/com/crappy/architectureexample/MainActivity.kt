@@ -1,5 +1,7 @@
 package com.crappy.architectureexample
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,7 +25,22 @@ class MainActivity : AppCompatActivity() {
         noteViewModel.getAllNotes().observe(this, Observer {
                 adapter.setNotes(it)
             adapter.notifyDataSetChanged()
-                Toast.makeText(this@MainActivity,"HI",Toast.LENGTH_SHORT).show()
+
         })
+        btn_add_notes.setOnClickListener {
+           val intent= Intent(this,AddNote::class.java)
+            startActivityForResult(intent, 1)
+        }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode== 1 && resultCode == Activity.RESULT_OK){
+           val note= Note(1,data!!.getStringExtra("title"),
+                    data.getStringExtra("description"),
+            data.getIntExtra("numberpicker",1))
+            noteViewModel.insert(note)
+            Toast.makeText(this,"SAved",Toast.LENGTH_SHORT).show()
+        }
+        Toast.makeText(this,"Note Not Saved",Toast.LENGTH_SHORT).show()   }
 }
